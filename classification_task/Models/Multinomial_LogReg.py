@@ -78,7 +78,7 @@ class MultinomialLogReg():
     y_ = np.zeros((self.m, self.K))
     for i in range(0, self.m):
       for k in range(0,self.K):
-        y_[i, k] = y[i]==self.classes[k]
+        y_[i, k] = self.y[i]==self.classes[k]
 
     # Converte de bool para int
     self.y_ = y_.astype(int)
@@ -234,7 +234,7 @@ class MultinomialLogReg_bissecao():
     y_ = np.zeros((self.m, self.K))
     for i in range(0, self.m):
       for k in range(0,self.K):
-        y_[i, k] = y[i]==self.classes[k]
+        y_[i, k] = self.y[i]==self.classes[k]
 
     # Converte de bool para int
     self.y_ = y_.astype(int)
