@@ -22,8 +22,8 @@ class MultinomialLogReg():
     self.theta = 1e-3
 
   def fit(self, X,y):
-    self.X=X
-    self.y=y
+    self.X=np.array(X)
+    self.y=np.array(y)
     self.m, self.p=X.shape
     self.classes = (np.unique(y))
     self.K = len(self.classes)
@@ -175,8 +175,8 @@ class MultinomialLogReg_bissecao():
   
 
   def fit(self, X,y):
-    self.X=X
-    self.y=y
+    self.X=np.array(X)
+    self.y=np.array(y)
     self.m, self.p=X.shape
     self.classes = (np.unique(y))
     self.K = len(self.classes)
@@ -191,6 +191,7 @@ class MultinomialLogReg_bissecao():
     d= -gradE
     norm_grad = self.norm_matrix(gradE)
     it=0
+    print('iteracao:',it, 'norm_grad:', norm_grad )
 
     while it<self.max_iter and norm_grad>self.theta: 
 
